@@ -15,7 +15,6 @@ import Animated, {
 } from 'react-native-reanimated'
 import {Image} from 'expo-image'
 import {type AppBskyEmbedImages} from '@atproto/api'
-import {utils} from '@bsky.app/alf'
 import {Trans, useLingui} from '@lingui/react/macro'
 import debounce from 'lodash.debounce'
 
@@ -458,10 +457,6 @@ function GalleryImage({
           accessibilityRole="button"
           accessibilityLabel={image.alt || l`Image ${index + 1}`}
           accessibilityHint={l`Opens full image`}
-          android_ripple={{
-            color: utils.alpha(t.atoms.bg.backgroundColor, 0.2),
-            foreground: true,
-          }}
           style={({pressed}) => [
             a.rounded_md,
             a.overflow_hidden,

@@ -6,7 +6,6 @@ import Animated, {
 } from 'react-native-reanimated'
 import {Image} from 'expo-image'
 import {type AppBskyEmbedImages} from '@atproto/api'
-import {utils} from '@bsky.app/alf'
 import {msg} from '@lingui/core/macro'
 import {useLingui} from '@lingui/react'
 import {Trans} from '@lingui/react/macro'
@@ -220,10 +219,6 @@ export function AutoSizedImage({
         accessibilityLabel={image.alt}
         accessibilityHint={_(msg`Views full image`)}
         accessibilityRole="button"
-        android_ripple={{
-          color: utils.alpha(t.atoms.bg.backgroundColor, 0.2),
-          foreground: true,
-        }}
         style={({pressed}) => [
           a.w_full,
           a.rounded_md,
@@ -252,10 +247,6 @@ export function AutoSizedImage({
           accessibilityLabel={image.alt}
           accessibilityHint={_(msg`Views full image`)}
           accessibilityRole="button"
-          android_ripple={{
-            color: utils.alpha(t.atoms.bg.backgroundColor, 0.2),
-            foreground: true,
-          }}
           style={({pressed}) => [
             a.h_full,
             a.rounded_md,
